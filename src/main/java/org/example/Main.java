@@ -17,13 +17,14 @@ public class Main {
         LocalDate data2 = LocalDate.of(2024,3,8);
         LocalDate data = LocalDate.of(2024,3,6);
         LocalTime localTime = LocalTime.now();
+        LocalTime localTime1 = LocalTime.now().minusHours(1).minusMinutes(28);
         Agenda agenda = new Agenda(data);
 
 
         // Criando alguns eventos
-        Evento evento1 = new Evento("Reunião de equipe", data3, "Discussão de novos projetos", localTime);
-        Evento evento2 = new Evento("Aniversário", data2, "Festa de aniversário do João",localTime);
-        Evento evento3 = new Evento("Consulta médica", data, "Check-up anual",localTime);
+        Evento evento1 = new Evento("Reunião de equipe", data3, "Discussão de novos projetos", localTime, localTime1);
+        Evento evento2 = new Evento("Aniversário", data2, "Festa de aniversário do João",localTime,localTime1);
+        Evento evento3 = new Evento("Consulta médica", data, "Check-up anual",localTime,localTime1);
 
         // Adicionando os eventos à agenda
         agenda.adicionarEventos(evento1);

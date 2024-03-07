@@ -35,7 +35,6 @@ public class Agenda {
         HashMap<LocalDate, List<Evento>> eventosMes = new HashMap<>();
         for (Map.Entry<LocalDate, List<Evento>> map : eventos.entrySet()){
             if (map.getKey().getMonthValue() == mes && map.getKey().getYear() == ano){
-
                 eventosMes.put(map.getKey(), map.getValue());
             }
         }
