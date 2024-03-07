@@ -20,7 +20,6 @@ public class Main {
         LocalTime localTime1 = LocalTime.now().minusHours(1).minusMinutes(28);
         Agenda agenda = new Agenda(data);
 
-
         // Criando alguns eventos
         Evento evento1 = new Evento("Reunião de equipe", data3, "Discussão de novos projetos", localTime, localTime1);
         Evento evento2 = new Evento("Aniversário", data2, "Festa de aniversário do João",localTime,localTime1);

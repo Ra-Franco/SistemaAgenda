@@ -13,7 +13,6 @@ public class Evento {
     private String descricao;
     private LocalTime horaInicio;
     private LocalTime horaFim;
-    private long diferenca;
 
     public Evento(String titulo, LocalDate data, String descricao, LocalTime horaInicio, LocalTime horaFim) {
         this.titulo = titulo;
@@ -63,9 +62,10 @@ public class Evento {
         this.horaFim = horaFim;
     }
 
-    public long getDiferenca(){
-        return ChronoUnit.HOURS.between(horaInicio, horaFim);
+    public LocalTime getDiferencaData(){
+        return LocalTime.of((int)(ChronoUnit.MINUTES.between(horaFim, horaInicio)/60),(int)(ChronoUnit.MINUTES.between(horaFim, horaInicio)%60));
     }
+
 
     @Override
     public String toString() {
@@ -73,7 +73,7 @@ public class Evento {
                 "titulo='" + titulo + '\'' +
                 ", data=" + data +
                 ", descricao='" + descricao + '\'' +
-                ", duração(Horas) =" + getDiferenca() +
+                ", duração(Horas) =" + getDiferencaData() +
                 '}';
     }
 }
